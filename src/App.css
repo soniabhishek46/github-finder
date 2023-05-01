@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+*{
+    font-family: 'Carlito', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*:focus {
+    outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container-w{
+    width: 1024px;
+    margin: 0 auto;
+}
+.navbar{
+    background-color: #00539CFF;
+    /* font-family: 'Carlito', sans-serif; */
+    color: #b8deff;
 }
 
-.App-link {
-  color: #61dafb;
+.flex-horizontal{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flex-vertical{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-link{
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.space-btwn{
+    justify-content: space-between;
+}
+
+.footer{
+    background-color: #00427d;
+    color: #00111f; 
+    /*#b8deff;*/
+    font-family: 'Carlito', sans-serif;
+}
+
+
+.border{
+    border: 1px solid red;
+}
+
+h4, h2{
+    margin: 0px;
+}
+
+.padd-vert{
+    padding: 16px 0px;
+}
+
+.grid-container{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: auto auto auto auto;
+}
+
+.card{
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 15px
+}
+
+.profile-img-box{
+    width: 50px;
+    height: 50px;
+}
+
+.profile-img{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.search-input{
+    border: 1px solid #ddd;
+    border-right: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 10px;
+}
+
+.go-btn{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding: 10px 25px;
+    border: 1px solid #00427d;
+    background-color: #00539CFF;
+    color: #b8deff;
+}
+
+.clear-btn{
+    border-radius: 8px;
+    padding: 10px 25px;
+    border: 1px solid #00427d;
+    background-color: #00539CFF;
+    color: #b8deff;
+    margin-top: 20px;
 }

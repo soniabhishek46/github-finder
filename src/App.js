@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NavBar from './components/navbar';
+import Footer from './components/footer';
+import Home from './components/home';
+import About from './components/about';
+import NotFound from './components/notfound';
+import {GithubProvider} from './contexts/github/githubContext';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GithubProvider>
+    <Router>
+      <div className='container space-btwn'>
+        <NavBar/>
+          <Routes>
+            <Route path='/' element={<Home/>} />
+            <Route path='/about' element={<About/>} />
+            <Route path='/notfound' element={<NotFound/>} />
+            <Route path='/*' element={<NotFound/>} />
+          </Routes>
+        <Footer/>
+      </div>
+    </Router>
+    </GithubProvider>
   );
 }
 
