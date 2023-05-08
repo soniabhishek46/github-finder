@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useContext } from "react";
+import GithubContext  from '../../contexts/github/githubContext';
 
 
 const UserSearch = ()=>{
 
     const [text, setText] = useState('');
+    const {users, search_users, clear_users} = useContext(GithubContext);
 
     const handleTextChange = (e)=>{
         setText(e.target.value);
@@ -17,11 +20,13 @@ const UserSearch = ()=>{
         }
         else{
             //to do
+            search_users(text);
             setText('');
         }
     }
 
     const clearInput = ()=>{
+        clear_users();
         setText('');
     }
 
@@ -35,9 +40,11 @@ const UserSearch = ()=>{
                     </div>
                 </form>
             </div>
+            {users.length > 0 && (
             <div>
                 <button className="clear-btn" onClick={clearInput}>Clear</button>
             </div>
+            )}
         </div>
     );
 }

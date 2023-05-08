@@ -29,11 +29,21 @@ export const GithubProvider = ({children})=>{
         dispatch({type: 'GET_USERS', payload: data})
     }
 
+    const search_users = async (text)=>{
+        set_loading();
+        const params = new URLSearchParams({q: text});
+        const response = await fetch(`${github_url}/search/users?${params}`);
+        const {items} = await response.json();
+        dispatch({type: 'GET_USERS', payload: items});
+    }
+
     const set_loading = ()=>{dispatch({type: 'SET_LOADING'})}
 
+    const clear_users = ()=>{dispatch({type: 'CLEAR_USERS'})};
+    
     // <GithubContext.Provider value={{users, loading, fetch_users}}>
     return (
-        <GithubContext.Provider value={{users: state.users, loading: state.loading, fetch_users}}>
+        <GithubContext.Provider value={{users: state.users, loading: state.loading, fetch_users, search_users, clear_users}}>
             {children}
         </GithubContext.Provider>
     );

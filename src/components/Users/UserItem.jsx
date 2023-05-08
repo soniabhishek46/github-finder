@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function UserItem({user}){
     return(
-        <div class="card">
+        <div className="card">
             <div className="flex-horizontal">
                 <div className="profile-img-box">
                     <img className="profile-img" src={user.avatar_url} alt="Profile Img" />
