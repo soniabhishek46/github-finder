@@ -6,11 +6,14 @@ import Home from './components/home';
 import About from './components/about';
 import NotFound from './components/notfound';
 import {GithubProvider} from './contexts/github/githubContext';
+import { AlertProvider } from './contexts/Alert/alertContext';
 
+//App.js
 
 function App() {
   return (
     <GithubProvider>
+    <AlertProvider>
     <Router>
       <div className='container space-btwn'>
         <NavBar/>
@@ -23,6 +26,7 @@ function App() {
         <Footer/>
       </div>
     </Router>
+    </AlertProvider>
     </GithubProvider>
   );
 }
